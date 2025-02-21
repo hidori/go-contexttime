@@ -1,0 +1,4 @@
+{
+  "ignorePaths": [".cspell.json", "go.*"],
+  "words": ["contexttime", "Println"]
+}
