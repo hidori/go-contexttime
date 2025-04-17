@@ -3,7 +3,7 @@
 ## INSTALL
 
 ```bash
-go get github.com/hidori/go-contexttime
+go get github.com/hidori/go-contexttime@latest
 ```
 
 ## USAGE
