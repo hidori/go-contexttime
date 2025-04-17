@@ -1,12 +1,13 @@
-IMAGE_NAME = hidori/genprop:latest
+AUTHOR = hidori
+PROJECT = contexttime
 
 .PHONY: lint
 lint:
-	docker run --rm -v $$PWD:$$PWD -w $$PWD golangci/golangci-lint:latest-alpine golangci-lint run
+	docker run --rm -v ${PWD}:${PWD} -w ${PWD} golangci/golangci-lint:latest-alpine golangci-lint run
 
 .PHONY: format
 format:
-	docker run --rm -v $$PWD:$$PWD -w $$PWD golangci/golangci-lint:latest-alpine golangci-lint run --fix
+	docker run --rm -v ${PWD}:${PWD} -w ${PWD} golangci/golangci-lint:latest-alpine golangci-lint run --fix
 
 .PHONY: test
 test:
@@ -18,9 +19,9 @@ version/patch: test lint
 	git fetch
 	git checkout main
 	git pull
-	docker run --rm hidori/semver -i patch `cat ./version.txt` > ./version.txt
-	git add ./version.txt
+	docker run --rm hidori/semver -i patch `cat ./meta/version.txt` > ./meta/version.txt
+	git add ./meta/version.txt
 	git commit -m 'Updated version.txt'
 	git push
-	git tag v`cat ./version.txt`
+	git tag v`cat ./meta/version.txt`
 	git push origin --tags
