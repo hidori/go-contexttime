@@ -1,7 +1,7 @@
 {
   "language": "en",
   "ignorePaths": [".cspell.json", ".golangci.yml"],
-  "words": ["contexttime", "hidori", "Println"],
+  "words": ["contexttime", "golangci", "hidori", "Println"],
   "languageSettings": [
     {
       "languageId": "go",

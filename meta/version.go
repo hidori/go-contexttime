@@ -1,4 +1,4 @@
-package contexttime
+package meta
 
 import (
 	_ "embed"
