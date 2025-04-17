@@ -23,7 +23,7 @@ func (t *DefaultTime) Now() time.Time {
 
 type KeyType string
 
-const KeyContextTime KeyType = "contexttime.Time"
+const KeyContextTime KeyType = "github.com/hidori/go-contexttime/contexttime.Time"
 
 func SetTime(ctx context.Context, time Time) context.Context {
 	return context.WithValue(ctx, KeyContextTime, time)
